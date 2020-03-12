@@ -16,13 +16,14 @@ class GMM_Localizer:
         n_azi = azi_all.shape[0]
         n_band = 32
         model_all = np.ndarray((n_azi, n_band), dtype=np.object)
+        print('load models')
         for azi_i, azi in enumerate(azi_all):
             for band_i in range(n_band):
                 model_fpath = os.path.join(
                                 model_dir, '{}_{}.npy'.format(azi, band_i))
                 model_all[azi_i, band_i] = GMMs()
                 model_all[azi_i, band_i].load(model_fpath)
-
+        print('finish loading')
         self.n_band = n_band
         self.azi_all = azi_all
         self.azi_resolution = 5

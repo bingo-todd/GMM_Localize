@@ -2,3 +2,4 @@ Data/
 .models_pre/
 __pycache__/
 models/
+result/

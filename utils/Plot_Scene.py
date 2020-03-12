@@ -4,11 +4,6 @@ import os
 import sys
 import time
 
-my_modules_dir = os.path.join(os.path.expanduser('~'),'my_modules')
-sys.path.append(os.path.join(my_modules_dir,'basic_tools/basic_tools'))
-import plot_tools
-from ProcessBar import ProcessBar
-
 
 class Plot_Scene:
 
@@ -17,9 +12,9 @@ class Plot_Scene:
         x = 3.50-((label-1)/5)
         return [x,y]
 
-    def __init__(self,src_azi_all,mic_label):
+    def __init__(self, src_azi_all, mic_pos, room=None):
         room_xy = [7.1,5.1]
-        mic_xy = self._label2xy_mic(mic_label)
+        mic_xy = self._label2xy_mic(mic_pos)
         src_dist = 1.5
 
         color_wall = 'black'
@@ -35,13 +30,16 @@ class Plot_Scene:
         ax.plot([room_xy[0],room_xy[0]],[0,room_xy[1]],color=color_wall)
         # mic
         ax.plot(mic_xy[0],mic_xy[1],marker='o',color=color_mic)
-        # sound (groundtruth)
+        # source (groundtruth)
         alpha = 1
         for azi in src_azi_all:
             azi_rad = (azi*5.-90.)/180.0*np.pi
             src_x = mic_xy[0] + (src_dist+0.2)*np.sin(azi_rad)
             src_y = mic_xy[1] + (src_dist+0.2)*np.cos(azi_rad)
             ax.scatter(src_x,src_y,marker='v',color=color_src,alpha=alpha)
+
+        if room is not None:
+            ax.text(0.8, 0.8, room)
 
         ax.spines['right'].set_visible(False)
         ax.spines['top'].set_visible(False)
@@ -71,7 +69,8 @@ class Plot_Scene:
 
 
     def savefig(self,fpath):
-        plot_tools.savefig(self.fig,fpath)
+        self.fig.savefig(fpath)
+        plt.close(self.fig)
 
 
 if __name__ == '__main__':
