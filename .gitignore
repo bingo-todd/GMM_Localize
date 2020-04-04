@@ -3,3 +3,4 @@ Data/
 __pycache__/
 models/
 result/
+models_GMMs_norm_0/

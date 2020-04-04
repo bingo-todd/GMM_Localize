@@ -24,7 +24,7 @@
 
   sentence = 5040
 
-  sentence_mic_poc = 630
+  sentence_mic_pos = 630
 
 
 
@@ -40,14 +40,13 @@ To obtain reliable models, GMMs are train with features selected based on 4 crit
   >the signals of the left and the right ear were added **prior** to energy computaion
 
 
-
-  $$\begin{equation}
+$$
+\begin{equation}
   \begin{aligned}
   SNR = \frac{\sum\left(s^{tar}_L(t)+s^{tar}_R(t)\right)^2}{\sum\left(s^{inter}_L(t)+s^{inter}_R(t)\right)^2}
   \end{aligned}
-  \end{equation}$$
-
-
+  \end{equation}
+$$
 
 3. L,R channels are correlated
 
@@ -59,7 +58,7 @@ Cues
 
 e.g.
 
-<img src='images/example/criterias_eg_20.png'>
+<img src='images/example/criterias_eg.png'>
 
 ### Training
 
@@ -82,26 +81,26 @@ Illustration of azimuth estimation
   </tr>
   <tr>
     <th>1</th>
-    <td><img src='images/example/loc_result/RT_0.29_5_8_0_scence.png'></td>
-    <td><img src='images/example/loc_result/RT_0.29_5_18_0_scence.png'></td>
-    <td><img src='images/example/loc_result/RT_0.29_5_28_0_scence.png'></td>
+    <td><img src='images/example/loc_example/RT_0.29_5_8_0_scence.png'></td>
+    <td><img src='images/example/loc_example/RT_0.29_5_18_0_scence.png'></td>
+    <td><img src='images/example/loc_example/RT_0.29_5_28_0_scence.png'></td>
   </tr>
   <tr>
     <th>2</th>
-    <td><img src='images/example/loc_result/RT_0.29_5_8_1_scence.png'></td>
-    <td><img src='images/example/loc_result/RT_0.29_5_18_1_scence.png'></td>
-    <td><img src='images/example/loc_result/RT_0.29_5_28_1_scence.png'></td>
+    <td><img src='images/example/loc_example/RT_0.29_5_8_1_scence.png'></td>
+    <td><img src='images/example/loc_example/RT_0.29_5_18_1_scence.png'></td>
+    <td><img src='images/example/loc_example/RT_0.29_5_28_1_scence.png'></td>
   </tr>
   <tr>
     <th>3</th>
-    <td><img src='images/example/loc_result/RT_0.29_5_8_2_scence.png'></td>
-    <td><img src='images/example/loc_result/RT_0.29_5_18_2_scence.png'></td>
-    <td><img src='images/example/loc_result/RT_0.29_5_28_2_scence.png'></td>
+    <td><img src='images/example/loc_example/RT_0.29_5_8_2_scence.png'></td>
+    <td><img src='images/example/loc_example/RT_0.29_5_18_2_scence.png'></td>
+    <td><img src='images/example/loc_example/RT_0.29_5_28_2_scence.png'></td>
   </tr>
   <tr>
     <th>4</th>
-    <td><img src='images/example/loc_result/RT_0.29_5_8_3_scence.png'></td>
-    <td><img src='images/example/loc_result/RT_0.29_5_18_3_scence.png'></td>
-    <td><img src='images/example/loc_result/RT_0.29_5_28_3_scence.png'></td>
+    <td><img src='images/example/loc_example/RT_0.29_5_8_3_scence.png'></td>
+    <td><img src='images/example/loc_example/RT_0.29_5_18_3_scence.png'></td>
+    <td><img src='images/example/loc_example/RT_0.29_5_28_3_scence.png'></td>
   </tr>
 </table>

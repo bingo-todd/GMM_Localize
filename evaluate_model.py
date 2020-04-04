@@ -59,9 +59,9 @@ def evaluate_mic(args):
 
                 rmse_all[azi_tar_i,
                          n_inter_i,
-                         test_i] = np.sqrt(np.sum(azi_diff**2))
+                         test_i] = np.sqrt(np.mean(azi_diff**2))
 
-    result_fpath = f'{room}_{mic_pos}.npy'
+    result_fpath = f'result/{room}_{mic_pos}.npy'
     np.save(result_fpath, [cp_all, rmse_all])
 
 

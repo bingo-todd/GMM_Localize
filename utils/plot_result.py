@@ -60,6 +60,13 @@ def plot_result():
     plot_tools.savefig(fig, fig_name='result_room.png',
                        fig_dir='../images/result')
 
+    with open('../result/result.txt', 'w') as result_file:
+        result_file.write('RMSE')
+        result_file.write('\t {}'.format(np.mean(rmse_all, axis=(1, 2, 3, 4))))
+
+        result_file.write('Anomalies')
+        result_file.write('\t {}'.format(1-np.mean(cp_all, axis=(1, 2, 3, 4))))
+
 
 if __name__ == '__main__':
     plot_result()
